@@ -1,18 +1,32 @@
-import "./globals.css";
+import { ReactNode } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function RootLayout({ children }) {
+import './globals.css';
+
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
         <header className="header">
           <div className="logo-container">
-            <img src="/logo.png" alt="Pure Home Gym Logo" className="logo" />
+            <Image
+              src="/logo.png"
+              alt="Pure Home Gym Logo"
+              width={80}
+              height={80}
+              className="logo"
+            />
             <h1>Pure Home Gym</h1>
           </div>
           <nav className="nav">
-            <a href="/">Home</a>
-            <a href="/equipment">Equipment</a>
-            <a href="/workouts">Workouts</a>
+            <Link href="/">Home</Link>
+            <Link href="/equipment">Equipment</Link>
+            <Link href="/workouts">Workouts</Link>
           </nav>
         </header>
         <main>{children}</main>
