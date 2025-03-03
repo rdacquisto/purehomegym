@@ -15,7 +15,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <header className="header">
           <div className="logo-container">
             <Image
-              src="/logo.png"
+              src="/purehomegym/phg.png"
               alt="Pure Home Gym Logo"
               width={80}
               height={80}
